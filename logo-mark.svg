@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <title>EM — Emerson Moura | Gestão &amp; Digital</title>
+  <defs>
+    <style><![CDATA[@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');]]></style>
+    <radialGradient id="markGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C9931A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#C9931A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fundo com glow sutil -->
+  <rect width="400" height="400" fill="#001200"/>
+  <rect width="400" height="400" fill="url(#markGlow)"/>
+
+  <!-- ═══ MARK ═══ -->
+  <!-- Border square -->
+  <rect x="75" y="75" width="250" height="250" fill="none" stroke="#C9931A" stroke-width="2.5"/>
+
+  <!-- TL corner bracket -->
+  <polyline points="75,118 75,35 158,35" fill="none" stroke="#C9931A" stroke-width="2.5" stroke-linecap="square"/>
+  <!-- BR corner bracket -->
+  <polyline points="325,282 325,365 242,365" fill="none" stroke="#C9931A" stroke-width="2.5" stroke-linecap="square"/>
+
+  <!-- Crosshair lines (very faint, reference ao hero do site) -->
+  <line x1="200" y1="75" x2="200" y2="100" stroke="#C9931A" stroke-width="1" opacity="0.2" stroke-dasharray="2 4"/>
+  <line x1="200" y1="300" x2="200" y2="325" stroke="#C9931A" stroke-width="1" opacity="0.2" stroke-dasharray="2 4"/>
+  <line x1="75" y1="200" x2="100" y2="200" stroke="#C9931A" stroke-width="1" opacity="0.2" stroke-dasharray="2 4"/>
+  <line x1="300" y1="200" x2="325" y2="200" stroke="#C9931A" stroke-width="1" opacity="0.2" stroke-dasharray="2 4"/>
+
+  <!-- EM monogram -->
+  <text x="200" y="222"
+        text-anchor="middle"
+        font-family="Poppins, 'Arial Black', sans-serif"
+        font-weight="800"
+        font-size="128"
+        letter-spacing="-4"
+        fill="#C9931A">EM</text>
+
+  <!-- Tiny label at bottom -->
+  <text x="200" y="356"
+        text-anchor="middle"
+        font-family="'Courier New', Courier, monospace"
+        font-size="11"
+        letter-spacing="5"
+        fill="#C9931A"
+        opacity="0.55">GESTÃO &amp; DIGITAL</text>
+</svg>

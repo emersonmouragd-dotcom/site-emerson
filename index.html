@@ -951,7 +951,7 @@
         </div>
       </div>
 
-      <form class="form-card" onsubmit="event.preventDefault();this.querySelector('button').textContent='Mensagem enviada ✓'">
+      <form class="form-card" onsubmit="enviarWhatsApp(event)">
         <span class="corner-frame tl"></span>
         <span class="corner-frame tr"></span>
         <span class="corner-frame bl"></span>
@@ -964,28 +964,28 @@
         <div class="form-row">
           <div class="form-field">
             <label>Nome</label>
-            <input type="text" placeholder="Seu nome" required>
+            <input id="f-nome" type="text" placeholder="Seu nome" required>
           </div>
           <div class="form-field">
             <label>Empresa</label>
-            <input type="text" placeholder="Nome do negócio">
+            <input id="f-empresa" type="text" placeholder="Nome do negócio">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-field">
             <label>WhatsApp</label>
-            <input type="tel" placeholder="(48) 9 9999-9999" required>
+            <input id="f-whatsapp" type="tel" placeholder="(48) 9 9999-9999" required>
           </div>
           <div class="form-field">
             <label>Cidade</label>
-            <input type="text" placeholder="Sua cidade">
+            <input id="f-cidade" type="text" placeholder="Sua cidade">
           </div>
         </div>
 
         <div class="form-field" style="margin-bottom:16px">
           <label>O que você precisa</label>
-          <select>
+          <select id="f-servico">
             <option>Sistema de gestão</option>
             <option>Sistema personalizado</option>
             <option>Organização financeira</option>
@@ -998,7 +998,7 @@
 
         <div class="form-field">
           <label>Me conta mais</label>
-          <textarea placeholder="Como funciona seu negócio hoje? O que você quer resolver?"></textarea>
+          <textarea id="f-mensagem" placeholder="Como funciona seu negócio hoje? O que você quer resolver?"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary form-submit">
@@ -1090,6 +1090,35 @@
 </a>
 
 <script>
+  function enviarWhatsApp(e) {
+    e.preventDefault();
+    const nome     = document.getElementById('f-nome').value.trim();
+    const empresa  = document.getElementById('f-empresa').value.trim();
+    const whatsapp = document.getElementById('f-whatsapp').value.trim();
+    const cidade   = document.getElementById('f-cidade').value.trim();
+    const servico  = document.getElementById('f-servico').value;
+    const mensagem = document.getElementById('f-mensagem').value.trim();
+
+    const linhas = [
+      'Olá, Emerson! Vim pelo seu site. 👋',
+      '',
+      `*Nome:* ${nome}`,
+      empresa  ? `*Empresa:* ${empresa}`   : null,
+      whatsapp ? `*WhatsApp:* ${whatsapp}` : null,
+      cidade   ? `*Cidade:* ${cidade}`     : null,
+      `*Serviço:* ${servico}`,
+      mensagem ? `\n*Mensagem:*\n${mensagem}` : null,
+    ].filter(l => l !== null).join('\n');
+
+    window.open('https://wa.me/5548991493340?text=' + encodeURIComponent(linhas), '_blank');
+
+    const btn = e.target.querySelector('button[type=submit]');
+    const original = btn.innerHTML;
+    btn.textContent = 'Abrindo WhatsApp... ✓';
+    btn.disabled = true;
+    setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 3000);
+  }
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }

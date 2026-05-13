@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 300" width="1080" height="300">
+  <title>Emerson Moura | Gestão &amp; Digital</title>
+  <defs>
+    <style><![CDATA[@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=JetBrains+Mono:wght@500&display=swap');]]></style>
+  </defs>
+
+  <!-- Fundo transparente — sem <rect> de background -->
+
+  <!-- ═══ BRAND MARK ═══ -->
+  <rect x="50" y="75" width="150" height="150" fill="none" stroke="#C9931A" stroke-width="2"/>
+  <polyline points="50,105 50,45 110,45" fill="none" stroke="#C9931A" stroke-width="2" stroke-linecap="square"/>
+  <polyline points="200,195 200,255 140,255" fill="none" stroke="#C9931A" stroke-width="2" stroke-linecap="square"/>
+  <text x="125" y="167"
+        text-anchor="middle"
+        font-family="Poppins, 'Arial Black', sans-serif"
+        font-weight="800"
+        font-size="68"
+        letter-spacing="-2"
+        fill="#C9931A">EM</text>
+
+  <!-- ═══ SEPARATOR ═══ -->
+  <line x1="240" y1="92" x2="240" y2="208" stroke="#C9931A" stroke-width="1" opacity="0.55"/>
+
+  <!-- ═══ WORDMARK ═══ -->
+  <text x="268" y="163"
+        font-family="Poppins, 'Arial Black', sans-serif"
+        font-weight="800"
+        font-size="58"
+        letter-spacing="-1"
+        fill="#FFFFFF">Emerson Moura</text>
+
+  <line x1="268" y1="198" x2="292" y2="198" stroke="#C9931A" stroke-width="1.5"/>
+  <text x="302" y="201"
+        font-family="'JetBrains Mono', 'Courier New', Courier, monospace"
+        font-weight="500"
+        font-size="15"
+        letter-spacing="7"
+        fill="#C9931A">GESTÃO &amp; DIGITAL</text>
+</svg>
