@@ -499,6 +499,87 @@
     color:var(--gold);margin-top:3px;
   }
 
+  /* ─── Portfolio ─── */
+  .portfolio-section{background:var(--green-deep);position:relative;overflow:hidden}
+  .project-card{
+    border:1px solid var(--line-gold);
+    background:rgba(255,255,255,.025);
+    position:relative;overflow:hidden;
+  }
+  .project-card::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg,transparent 0,transparent 28px,rgba(201,147,26,.02) 28px,rgba(201,147,26,.02) 29px);
+    pointer-events:none;
+  }
+  .project-inner{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:0;position:relative;
+  }
+  @media(max-width:900px){.project-inner{grid-template-columns:1fr}}
+  .project-info{
+    padding:52px 48px;
+    border-right:1px solid var(--line-gold);
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  @media(max-width:900px){.project-info{border-right:none;border-bottom:1px solid var(--line-gold);padding:40px 28px}}
+  .project-client{
+    font-family:var(--mono);font-size:9px;
+    letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:6px;
+  }
+  .project-info h3{font-size:24px;font-weight:700;color:var(--white);margin-bottom:16px;letter-spacing:-.01em}
+  .project-info p{font-size:14px;line-height:1.7;color:var(--white-70)}
+  .project-modules{
+    display:flex;flex-wrap:wrap;gap:7px;margin-top:28px;
+  }
+  .project-tag{
+    font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);
+    border:1px solid var(--line-gold);
+    padding:5px 10px;
+  }
+  .project-stack{
+    display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;align-items:center;
+  }
+  .stack-label{
+    font-family:var(--mono);font-size:9px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--white-45);
+  }
+  .stack-item{
+    font-family:var(--mono);font-size:10px;color:var(--gold);
+    font-weight:500;
+  }
+
+  .project-screens{
+    padding:40px 32px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:20px;position:relative;
+    background:rgba(0,0,0,.18);
+  }
+  @media(max-width:900px){.project-screens{padding:32px 20px}}
+  .screen-desktop{
+    width:100%;border:1px solid var(--line-gold-strong);
+    box-shadow:0 24px 48px -12px rgba(0,0,0,.6);
+    border-radius:4px;overflow:hidden;
+  }
+  .screen-desktop img{width:100%;height:auto;display:block}
+  .screen-mobile-wrap{
+    display:flex;justify-content:flex-end;margin-top:-40px;margin-right:8px;
+  }
+  .screen-mobile{
+    width:130px;
+    border:1px solid var(--line-gold-strong);
+    box-shadow:0 18px 36px -8px rgba(0,0,0,.7);
+    border-radius:12px;overflow:hidden;
+    background:#0a0a0a;
+  }
+  .screen-mobile img{width:100%;height:auto;display:block}
+  .screen-label{
+    font-family:var(--mono);font-size:8px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--white-45);text-align:center;
+    margin-top:8px;
+  }
+
   /* ─── Contact ─── */
   .contact-section{background:var(--green);position:relative}
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
@@ -622,6 +703,7 @@
     </a>
     <nav class="nav-links" aria-label="Navegação principal">
       <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -889,6 +971,72 @@
 </section>
 
 
+
+<!-- ─── Portfolio ─── -->
+<div class="sep"></div>
+<section class="section portfolio-section" id="portfolio">
+  <div class="tech-grid" style="opacity:.4"></div>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Portfólio</span>
+        <h2 style="margin-top:16px;color:var(--white)">Sistemas<br><span style="color:var(--gold)">entregues.</span></h2>
+      </div>
+      <p>Cada projeto é construído do zero para o processo real da empresa — sem templates genéricos, sem funcionalidades inúteis.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-inner">
+
+        <div class="project-info">
+          <div>
+            <div class="project-client">Cliente · ADM Construções e Pintura</div>
+            <h3>Sistema de Gestão Completo</h3>
+            <p>
+              Sistema web desenvolvido sob medida para centralizar toda a operação da empresa: do primeiro contato com o cliente até o fechamento financeiro da obra. O dono passou a ter visão total do negócio em tempo real, sem planilha e sem anotação em papel.
+            </p>
+            <div class="project-modules">
+              <span class="project-tag">Visão Geral</span>
+              <span class="project-tag">Clientes</span>
+              <span class="project-tag">CRM</span>
+              <span class="project-tag">Equipe</span>
+              <span class="project-tag">Estoque</span>
+              <span class="project-tag">Orçamentos</span>
+              <span class="project-tag">Contratos</span>
+              <span class="project-tag">Obras</span>
+              <span class="project-tag">Financeiro</span>
+              <span class="project-tag">Relatórios</span>
+            </div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-label">Stack —</span>
+            <span class="stack-item">React</span>
+            <span class="stack-item">Supabase</span>
+            <span class="stack-item">PWA</span>
+          </div>
+        </div>
+
+        <div class="project-screens">
+          <div style="width:100%">
+            <div class="screen-desktop">
+              <img src="adm-dashboard.png" alt="Dashboard do sistema ADM Construções — visão geral com clientes ativos, orçamentos, a receber e obras em andamento" loading="lazy">
+            </div>
+            <div class="screen-mobile-wrap">
+              <div>
+                <div class="screen-mobile">
+                  <img src="adm-mobile.jpg" alt="Menu lateral do app mobile ADM Construções" loading="lazy">
+                </div>
+                <div class="screen-label">Mobile · v0.1.0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- ─── Contact ─── -->
 <section class="section contact-section" id="contato">
