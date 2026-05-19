@@ -180,10 +180,53 @@
   .hamburger span{display:block;height:1.5px;background:var(--white);transition:all .3s}
   .hamburger span:nth-child(1){width:22px}
   .hamburger span:nth-child(2){width:14px}
+  .hamburger.open span:nth-child(1){width:22px;transform:translateY(3.5px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){width:22px;transform:translateY(-3.5px) rotate(-45deg)}
   @media(max-width:900px){
     .nav-links,.nav-cta{display:none}
     .hamburger{display:flex}
   }
+
+  /* Mobile menu */
+  .mobile-menu{
+    display:none;position:fixed;
+    top:71px;left:0;right:0;bottom:0;z-index:99;
+    background:rgba(0,12,0,0.97);
+    backdrop-filter:blur(16px);
+    border-top:1px solid var(--line-gold);
+    flex-direction:column;
+    overflow-y:auto;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu nav{
+    display:flex;flex-direction:column;flex:1;
+    padding:8px 0;
+  }
+  .mobile-menu nav a{
+    font-size:18px;font-weight:600;
+    color:var(--white-70);
+    padding:20px 28px;
+    letter-spacing:.01em;
+    border-bottom:1px solid var(--line-gold);
+    transition:color .2s ease, padding-left .2s ease;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .mobile-menu nav a:first-child{border-top:1px solid var(--line-gold)}
+  .mobile-menu nav a:hover{color:var(--gold);padding-left:36px}
+  .mobile-menu nav a::after{
+    content:"→";font-size:14px;color:var(--gold);opacity:.5;
+  }
+  .mobile-menu-cta{
+    padding:24px 28px;
+  }
+  .mobile-menu-cta a{
+    display:block;text-align:center;
+    padding:16px;
+    background:var(--gold);color:var(--green-deep);
+    font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    transition:background .2s ease;
+  }
+  .mobile-menu-cta a:hover{background:var(--gold-soft)}
 
   /* ─── Hero ─── */
   .hero{
@@ -712,6 +755,20 @@
     <button class="hamburger" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
+
+<!-- ─── Mobile Menu ─── -->
+<div class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="/blog/">Blog</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="https://wa.me/5548991235477" target="_blank" rel="noopener">Orçamento grátis</a>
+  </div>
+</div>
 
 <!-- ─── Hero ─── -->
 <section class="hero">
@@ -1282,6 +1339,21 @@
     header.style.background = window.scrollY > 30
       ? 'rgba(0,12,0,0.96)'
       : 'rgba(0,18,0,0.88)';
+  });
+
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
   });
 </script>
 </body>
