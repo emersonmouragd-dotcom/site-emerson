@@ -62,10 +62,24 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(16px
 .nav-cta{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 20px;border:1px solid var(--gold);color:var(--gold);transition:all .2s ease}
 .nav-cta:hover{background:var(--gold);color:var(--green-deep)}
 .hamburger{display:none;color:var(--white);width:28px;height:28px;flex-direction:column;justify-content:center;gap:5px;align-items:flex-end}
-.hamburger span{display:block;height:1.5px;background:var(--white)}
+.hamburger span{display:block;height:1.5px;background:var(--white);transition:all .3s}
 .hamburger span:nth-child(1){width:22px}
 .hamburger span:nth-child(2){width:14px}
+.hamburger.open span:nth-child(1){width:22px;transform:translateY(3.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){width:22px;transform:translateY(-3.5px) rotate(-45deg)}
 @media(max-width:900px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;top:71px;left:0;right:0;bottom:0;z-index:99;background:rgba(0,12,0,0.97);backdrop-filter:blur(16px);border-top:1px solid var(--line-gold);flex-direction:column;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu nav{display:flex;flex-direction:column;flex:1;padding:8px 0}
+.mobile-menu nav a{font-size:18px;font-weight:600;color:var(--white-70);padding:20px 28px;letter-spacing:.01em;border-bottom:1px solid var(--line-gold);transition:color .2s ease,padding-left .2s ease;display:flex;align-items:center;justify-content:space-between}
+.mobile-menu nav a:first-child{border-top:1px solid var(--line-gold)}
+.mobile-menu nav a:hover{color:var(--gold);padding-left:36px}
+.mobile-menu nav a::after{content:"→";font-size:14px;color:var(--gold);opacity:.5}
+.mobile-menu-cta{padding:24px 28px}
+.mobile-menu-cta a{display:block;text-align:center;padding:16px;background:var(--gold);color:var(--green-deep);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease}
+.mobile-menu-cta a:hover{background:var(--gold-soft)}
 
 /* ─── Blog Hero ─── */
 .blog-hero{min-height:340px;padding:140px 0 88px;background:radial-gradient(ellipse at 70% 30%,rgba(10,84,8,.45),transparent 55%),linear-gradient(160deg,var(--green-deep) 0%,var(--green) 100%);position:relative;overflow:hidden}
