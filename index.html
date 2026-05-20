@@ -43,6 +43,25 @@
   "founder": { "@type": "Person", "name": "Emerson Moura" }
 }
 </script>
+<!-- Schema FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Para que tipo de empresa você trabalha?","acceptedAnswer":{"@type":"Answer","text":"Atendo pequenas empresas de qualquer segmento — comércio, serviços, prestadores autônomos — que precisam organizar a gestão interna, melhorar a presença digital ou as duas coisas ao mesmo tempo. Não existe porte mínimo: se o negócio existe e quer crescer, posso ajudar."}},
+    {"@type":"Question","name":"Preciso contratar gestão e digital juntos ou posso escolher só um?","acceptedAnswer":{"@type":"Answer","text":"Pode escolher só o que faz sentido para o seu momento. Ofereço os serviços separadamente ou em conjunto. Mas se precisar dos dois, trabalhar de forma integrada costuma gerar resultado mais rápido — porque gestão organizada e presença digital se complementam."}},
+    {"@type":"Question","name":"Como funciona o atendimento sendo remoto?","acceptedAnswer":{"@type":"Answer","text":"Todo o processo acontece por videochamada, WhatsApp e e-mail. A distância não compromete a entrega — o diagnóstico, a implementação e o suporte são feitos de forma totalmente online, com acompanhamento próximo em cada etapa."}},
+    {"@type":"Question","name":"Por onde começamos?","acceptedAnswer":{"@type":"Answer","text":"Sempre pelo diagnóstico. Antes de qualquer proposta, entendo como o negócio funciona hoje, quais são os maiores gargalos e o que vai gerar mais resultado no menor tempo. Só depois apresento o caminho mais adequado."}},
+    {"@type":"Question","name":"Quanto tempo leva para ver resultado?","acceptedAnswer":{"@type":"Answer","text":"Depende do serviço contratado. A organização financeira e a implantação de sistema já trazem clareza nas primeiras semanas. Site e Google Meu Negócio entram no ar em poucos dias após aprovação. Instagram e tráfego pago têm resultado crescente ao longo do tempo."}},
+    {"@type":"Question","name":"Você cria sites do zero ou só reformula o que já existe?","acceptedAnswer":{"@type":"Answer","text":"Crio do zero. Desenvolvo sites institucionais completos, pensados para passar credibilidade e converter visitantes em clientes — com identidade visual, textos e otimização para o Google."}},
+    {"@type":"Question","name":"O que é implantação de sistema de gestão?","acceptedAnswer":{"@type":"Answer","text":"É o processo de escolher, configurar e colocar em funcionamento um sistema adequado à realidade do seu negócio — para controlar vendas, financeiro, estoque, emissão de notas fiscais e mais. Cuido de tudo: configuração, adaptação aos seus processos e treinamento para sua equipe."}},
+    {"@type":"Question","name":"Vocês oferecem suporte depois que o serviço é entregue?","acceptedAnswer":{"@type":"Answer","text":"Sim. Não entrego e sumo. Todos os serviços incluem um período de suporte para garantir que tudo funcione bem e tirar dúvidas que apareçam no dia a dia."}},
+    {"@type":"Question","name":"Você também cuida do Google Meu Negócio?","acceptedAnswer":{"@type":"Answer","text":"Sim. Configuro e otimizo o perfil da sua empresa no Google para que ela apareça nas buscas locais — com fotos, informações completas, categorias certas e respostas a avaliações. É uma das formas mais rápidas de ganhar visibilidade sem investir em anúncios."}},
+    {"@type":"Question","name":"Como entro em contato para começar?","acceptedAnswer":{"@type":"Answer","text":"Pelo WhatsApp. É o jeito mais rápido de entender sua situação e agendar uma conversa sem compromisso."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -662,6 +681,37 @@
     margin-top:8px;
   }
 
+  /* ─── FAQ ─── */
+  .faq-section{background:var(--green-dark);position:relative}
+  .faq-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:52px}
+  @media(max-width:768px){.faq-head{grid-template-columns:1fr;gap:16px}}
+  .faq-list{display:flex;flex-direction:column;gap:0}
+  .faq-item{border-bottom:1px solid var(--line-gold)}
+  .faq-item:first-child{border-top:1px solid var(--line-gold)}
+  .faq-btn{
+    width:100%;background:none;border:none;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:22px 0;text-align:left;color:var(--white);
+    font-family:var(--sans);font-size:16px;font-weight:500;line-height:1.4;
+    transition:color .2s;
+  }
+  .faq-btn:hover{color:var(--gold)}
+  .faq-icon{
+    flex-shrink:0;width:22px;height:22px;border-radius:50%;
+    border:1px solid var(--line-gold-strong);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);transition:transform .3s,background .2s;
+  }
+  .faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(201,147,26,.12)}
+  .faq-body{
+    max-height:0;overflow:hidden;
+    transition:max-height .35s ease,padding .35s ease;
+  }
+  .faq-body p{
+    padding-bottom:20px;color:var(--white-70);
+    font-size:15px;line-height:1.7;
+  }
+
   /* ─── Contact ─── */
   .contact-section{background:var(--green);position:relative}
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
@@ -1138,6 +1188,106 @@
   </div>
 </section>
 
+<!-- ─── FAQ ─── -->
+<div class="sep"></div>
+<section class="section faq-section" id="faq">
+  <div class="tech-grid" style="opacity:.3"></div>
+  <div class="container">
+
+    <div class="faq-head">
+      <div>
+        <span class="eyebrow">Dúvidas frequentes</span>
+        <h2 style="margin-top:16px;color:var(--white)">Perguntas<br><span style="color:var(--gold)">respondidas.</span></h2>
+      </div>
+      <p style="color:var(--white-70);font-size:16px;line-height:1.7">O que a maioria dos clientes quer saber antes de começar. Se tiver outra dúvida, é só chamar no WhatsApp.</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Para que tipo de empresa você trabalha?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Atendo pequenas empresas de qualquer segmento — comércio, serviços, prestadores autônomos — que precisam organizar a gestão interna, melhorar a presença digital ou as duas coisas ao mesmo tempo. Não existe porte mínimo: se o negócio existe e quer crescer, posso ajudar.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Preciso contratar gestão e digital juntos ou posso escolher só um?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Pode escolher só o que faz sentido para o seu momento. Ofereço os serviços separadamente ou em conjunto. Mas se precisar dos dois, trabalhar de forma integrada costuma gerar resultado mais rápido — porque gestão organizada e presença digital se complementam.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Como funciona o atendimento sendo remoto?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Todo o processo acontece por videochamada, WhatsApp e e-mail. A distância não compromete a entrega — o diagnóstico, a implementação e o suporte são feitos de forma totalmente online, com acompanhamento próximo em cada etapa.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Por onde começamos?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Sempre pelo diagnóstico. Antes de qualquer proposta, entendo como o negócio funciona hoje, quais são os maiores gargalos e o que vai gerar mais resultado no menor tempo. Só depois apresento o caminho mais adequado.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Quanto tempo leva para ver resultado?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Depende do serviço contratado. A organização financeira e a implantação de sistema já trazem clareza nas primeiras semanas. Site e Google Meu Negócio entram no ar em poucos dias após aprovação. Instagram e tráfego pago têm resultado crescente ao longo do tempo.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Você cria sites do zero ou só reformula o que já existe?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Crio do zero. Desenvolvo sites institucionais completos, pensados para passar credibilidade e converter visitantes em clientes — com identidade visual, textos e otimização para o Google.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          O que é implantação de sistema de gestão?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>É o processo de escolher, configurar e colocar em funcionamento um sistema adequado à realidade do seu negócio — para controlar vendas, financeiro, estoque, emissão de notas fiscais e mais. Cuido de tudo: configuração, adaptação aos seus processos e treinamento para sua equipe.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Vocês oferecem suporte depois que o serviço é entregue?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Sim. Não entrego e sumo. Todos os serviços incluem um período de suporte para garantir que tudo funcione bem e tirar dúvidas que apareçam no dia a dia.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Você também cuida do Google Meu Negócio?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Sim. Configuro e otimizo o perfil da sua empresa no Google para que ela apareça nas buscas locais — com fotos, informações completas, categorias certas e respostas a avaliações. É uma das formas mais rápidas de ganhar visibilidade sem investir em anúncios.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          Como entro em contato para começar?
+          <span class="faq-icon" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="faq-body"><p>Pelo WhatsApp. É o jeito mais rápido de entender sua situação e agendar uma conversa sem compromisso.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ─── Contact ─── -->
 <section class="section contact-section" id="contato">
   <div class="container">
@@ -1377,6 +1527,25 @@
   document.querySelectorAll('.section, .hero-content > *').forEach(el => {
     el.classList.add('reveal');
     io.observe(el);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-body').style.maxHeight = '0';
+        el.querySelector('.faq-btn').setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
   });
 
   const header = document.querySelector('header');
