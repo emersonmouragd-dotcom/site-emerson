@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.emersonmouragestaoedigital.com.br/sitemap.xml
