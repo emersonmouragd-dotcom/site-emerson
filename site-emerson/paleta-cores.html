@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emerson Moura — Identidade Visual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --verde:   #002e00;
+      --dourado: #C9931A;
+      --claro:   #f5f0e8;
+      --suave:   rgba(245, 240, 232, 0.6);
+    }
+
+    body { font-family: 'Poppins', sans-serif; background: #f0ede8; }
+
+    /* ── PALETA ── */
+    .swatches {
+      display: flex;
+      height: 80px;
+    }
+    .swatch {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--verde);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      border-bottom: 2px solid var(--dourado);
+    }
+    .logo { color: #fff; font-size: 17px; font-weight: 700; }
+    .logo span { color: var(--dourado); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--suave); font-size: 13px; text-decoration: none; }
+    .nav-btn {
+      background: var(--dourado);
+      color: var(--verde);
+      border: none;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--verde);
+      padding: 90px 60px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-left { max-width: 560px; }
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--dourado);
+      color: var(--dourado);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--dourado); }
+    .hero p {
+      font-size: 16px;
+      color: var(--suave);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+    .btns { display: flex; gap: 14px; }
+    .btn-p {
+      background: var(--dourado);
+      color: var(--verde);
+      border: none;
+      padding: 13px 28px;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-o {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 13px 28px;
+      border-radius: 7px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Card do lado direito */
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,147,26,0.3);
+      border-radius: 16px;
+      padding: 32px;
+      min-width: 260px;
+      flex-shrink: 0;
+    }
+    .hero-card p { color: var(--suave); font-size: 12px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .stat { margin-bottom: 20px; }
+    .stat strong { display: block; font-size: 28px; font-weight: 800; color: var(--dourado); }
+    .stat span { font-size: 13px; color: var(--suave); }
+    .divider { border: none; border-top: 1px solid rgba(201,147,26,0.2); margin: 16px 0; }
+
+    /* ── SERVIÇOS ── */
+    .services {
+      padding: 80px 60px;
+      background: var(--claro);
+    }
+    .tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); font-weight: 600; margin-bottom: 8px; }
+    .services h2 { font-size: 32px; font-weight: 700; color: var(--verde); margin-bottom: 48px; max-width: 440px; line-height: 1.3; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      border-bottom: 3px solid var(--dourado);
+      box-shadow: 0 2px 12px rgba(0,46,0,0.06);
+    }
+    .card-icon {
+      width: 42px; height: 42px;
+      background: var(--verde);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+    .card h3 { font-size: 16px; font-weight: 700; color: var(--verde); margin-bottom: 10px; }
+    .card p { font-size: 13px; color: #666; line-height: 1.7; }
+
+    /* ── CARD DIGITAL ── */
+    .card-section {
+      padding: 80px 60px;
+      background: #e8e4de;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+    }
+    .card-section h2 { font-size: 22px; font-weight: 700; color: var(--verde); margin-bottom: 8px; }
+    .card-section p { font-size: 14px; color: #666; }
+    .business-card {
+      width: 380px;
+      height: 210px;
+      background: var(--verde);
+      border-radius: 14px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 50px rgba(0,46,0,0.25);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .business-card::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--dourado);
+    }
+    .bc-name { font-size: 20px; font-weight: 800; color: #fff; }
+    .bc-tag { font-size: 10px; color: var(--dourado); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+    .bc-line { width: 32px; height: 2px; background: var(--dourado); margin: 14px 0; }
+    .bc-contact { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+
+    /* ── CTA ── */
+    .cta {
+      background: var(--verde);
+      padding: 80px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      border-top: 1px solid rgba(201,147,26,0.2);
+    }
+    .cta h2 { font-size: 32px; font-weight: 700; color: #fff; max-width: 460px; line-height: 1.3; }
+    .cta h2 span { color: var(--dourado); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #001a00;
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .f-logo { font-size: 15px; font-weight: 700; color: #fff; }
+    .f-logo span { color: var(--dourado); }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.4); }
+  </style>
+</head>
+<body>
+
+  <!-- SWATCHES -->
+  <div class="swatches">
+    <div class="swatch" style="background:#002e00; color:#C9931A;">#002e00 — Verde</div>
+    <div class="swatch" style="background:#C9931A; color:#002e00;">#C9931A — Dourado</div>
+    <div class="swatch" style="background:#f5f0e8; color:#002e00;">#f5f0e8 — Fundo</div>
+    <div class="swatch" style="background:#fff; color:#002e00; border: 1px solid #ddd;">#ffffff — Branco</div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Emerson<span>.</span>Moura</div>
+    <ul class="nav-links">
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Cases</a></li>
+      <li><a href="#">Sobre</a></li>
+    </ul>
+    <button class="nav-btn">Falar no WhatsApp</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="badge">Florianópolis & Sul do Brasil</div>
+      <h1>Estruturo sua gestão e coloco sua <span>empresa no digital</span></h1>
+      <p>Sistemas de gestão, consultoria administrativa e presença digital para quem quer sair do papel e aparecer de verdade.</p>
+      <div class="btns">
+        <button class="btn-p">Diagnóstico gratuito</button>
+        <button class="btn-o">Ver cases</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p>Resultados entregues</p>
+      <div class="stat">
+        <strong>2+</strong>
+        <span>Sistemas implementados</span>
+      </div>
+      <hr class="divider">
+      <div class="stat">
+        <strong>2</strong>
+        <span>Sites entregues</span>
+      </div>
+      <hr class="divider">
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Atendimento personalizado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="services">
+    <p class="tag">O que eu faço</p>
+    <h2>Tudo que sua empresa precisa para funcionar e aparecer</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Sistemas Administrativos</h3>
+        <p>Implanto sistemas de orçamento, financeiro e controle para substituir planilhas e processos manuais.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Consultoria de Gestão</h3>
+        <p>Organizo fluxo de caixa, precificação e controle de estoque de forma simples e prática.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Presença Digital</h3>
+        <p>Coloco sua empresa no Google, estruturo as redes sociais e crio site profissional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD DIGITAL -->
+  <section class="card-section">
+    <div>
+      <h2>Card Digital</h2>
+      <p>Como você aparece ao se apresentar</p>
+    </div>
+    <div class="business-card">
+      <div>
+        <div class="bc-name">Emerson Moura</div>
+        <div class="bc-tag">Sistemas · Gestão · Presença Digital</div>
+      </div>
+      <div class="bc-line"></div>
+      <div class="bc-contact">
+        📱 (48) xxxxx-xxxx<br>
+        📷 @emersonmoura.digital<br>
+        📍 Florianópolis, SC
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Pronto para sua empresa crescer <span>organizada e visível?</span></h2>
+    <button class="btn-p" style="white-space:nowrap; flex-shrink:0; padding: 14px 32px; font-size:15px;">Conversar no WhatsApp</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-logo">Emerson<span>.</span>Moura</div>
+    <p>Sistemas, gestão e presença digital para pequenas empresas</p>
+    <p>© 2026</p>
+  </footer>
+
+</body>
+</html>
